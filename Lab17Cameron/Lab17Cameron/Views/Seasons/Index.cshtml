@@ -1,0 +1,59 @@
+﻿@model IEnumerable<Lab17Cameron.Models.Season>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.DestinationID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Winter)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Spring)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Summer)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Fall)
+                </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DestinationID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Winter)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Spring)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Summer)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fall)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.SeasonID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.SeasonID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.SeasonID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

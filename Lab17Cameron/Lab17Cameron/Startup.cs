@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.EntityFrameworkCore;
+using Lab17Cameron.Models;
 
 namespace Lab17Cameron
 {
@@ -22,6 +24,9 @@ namespace Lab17Cameron
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+
+            services.AddDbContext<Lab17CameronContext>(options =>
+                    options.UseSqlServer(Configuration.GetConnectionString("Lab17CameronContext")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

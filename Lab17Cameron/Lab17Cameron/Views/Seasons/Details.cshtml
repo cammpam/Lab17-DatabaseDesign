@@ -1,0 +1,48 @@
+﻿@model Lab17Cameron.Models.Season
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Season</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DestinationID)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DestinationID)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Winter)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Winter)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Spring)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Spring)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Summer)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Summer)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Fall)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Fall)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.SeasonID">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
